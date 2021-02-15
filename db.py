@@ -16,6 +16,6 @@ def get_con():
 
 def add_word(word):
     cur = conn.cursor()
-    cur.execute(f"INSERT INTO drawsaurus.words VALUES ('${word}') ON CONFLICT DO NOTHING")
+    cur.execute(f"INSERT INTO drawsaurus.words VALUES ('{word}') ON CONFLICT DO NOTHING")
     conn.commit()
     return {'msg': 'Success'}
